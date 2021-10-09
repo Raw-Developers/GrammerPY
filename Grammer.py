@@ -3,7 +3,6 @@ import language_check
   
 # Mention the language keyword
 tool = language_check.LanguageTool('en-US')
-count = 0
 matches = []
   
 # Path of file which needs to be checked
