@@ -12,13 +12,8 @@ with open(r'transcript1.txt', 'r') as fin:
         matches = tool.check(line)
         i = i + len(matches)     
         pass
-  
-# prints total mistakes which are found 
-# from the document
 print("No. of mistakes found in document is ", i)
-print()
-    
-# prints mistake one by one 
+print() 
 for mistake in matches:
     print(mistake)
     print()
