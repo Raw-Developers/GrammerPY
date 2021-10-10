@@ -3,17 +3,13 @@ import language_check
   
 # Mention the language keyword
 tool = language_check.LanguageTool('en-US')
-i = 0
+matches = []
   
 # Path of file which needs to be checked
-with open(r'transcript1.txt', 'r') as fin:  
-               
-    for line in fin:
-        matches = tool.check(line)
-        i = i + len(matches)     
-        pass
-print("No. of mistakes found in document is ", i)
-print() 
+with open('transcript1.txt', 'r') as f:             
+    for line in f:
+        matches.extend(tool.check(line))
+
+print("No. of mistakes found in document is", len(matches), "\n")
 for mistake in matches:
-    print(mistake)
-    print()
+    print(mistake, "\n")
